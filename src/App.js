@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import { Route } from 'react-router';
 import './App.css';
+import './dark-mode.css';
+import Header from './components/header/pages';
+import Loader from './components/loader/loader';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App site-wrapper">
+            <Loader />
+            <Header />
+            <div>body</div>
+            {/* <Route path="/header" component={Header} /> */}
+            <div>Footer</div>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,146 @@
+/* =============================================================================
+## DARK MODE
+============================================================================= */
+
+.dark-mode {
+  --color-contrast-100: rgb(255, 255, 255);
+  --color-contrast-80: rgba(255, 255, 255, 0.8);
+  --color-contrast-60: rgba(255, 255, 255, 0.6);
+  --color-contrast-50: rgba(255, 255, 255, 0.5);
+  --color-contrast-40: rgba(255, 255, 255, 0.4);
+  --color-contrast-30: rgba(255, 255, 255, 0.3);
+  --color-contrast-20: rgba(255, 255, 255, 0.2);
+  --color-contrast-10: rgba(255, 255, 255, 0.1);
+  --color-contrast-5: rgba(255, 255, 255, 0.05);
+
+  --color-heading-subtitle: var(--color-contrast-40);
+  --color-text: var(--color-contrast-80);
+  --color-cat: var(--color-contrast-60);
+  --color-excerpt: var(--color-contrast-60);
+  --color-meta: rgba(255, 255, 255, 0.48);
+  --color-links: var(--color-text);
+  --color-links-hover: var(--color-text);
+  --color-border: rgba(255, 255, 255, 0.13);
+
+  --bg-dark-mode: #353535;
+  --bg-dark-mode-aside: #2a2a2a;
+}
+
+/* ----------------------------------------------------------------
+  Generals
+-----------------------------------------------------------------*/
+
+.dark-mode {
+  color-scheme: dark;
+  background-color: var(--bg-dark-mode);
+  color: var(--color-contrast-80);
+}
+
+.dark-mode input[type="date"],
+.dark-mode input[type="time"],
+.dark-mode input[type="datetime-local"],
+.dark-mode input[type="week"],
+.dark-mode input[type="month"],
+.dark-mode input[list],
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="url"],
+.dark-mode input[type="password"],
+.dark-mode input[type="search"],
+.dark-mode input[type="tel"],
+.dark-mode input[type="number"],
+.dark-mode textarea,
+.dark-mode select {
+  color: var(--color-contrast-80);
+  background-color: var(--bg-dark-mode-aside);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input[type="date"]:focus,
+.dark-mode input[type="time"]:focus,
+.dark-mode input[type="datetime-local"]:focus,
+.dark-mode input[type="week"]:focus,
+.dark-mode input[type="month"]:focus,
+.dark-mode input[list]:focus,
+.dark-mode input[type="text"]:focus,
+.dark-mode input[type="email"]:focus,
+.dark-mode input[type="url"]:focus,
+.dark-mode input[type="password"]:focus,
+.dark-mode input[type="search"]:focus,
+.dark-mode input[type="tel"]:focus,
+.dark-mode input[type="number"]:focus,
+.dark-mode textarea:focus,
+.dark-mode select:focus {
+  border-color: var(--color-primary);
+}
+
+.dark-mode input[type="button"]:not(.btn),
+.dark-mode input[type="reset"]:not(.btn),
+.dark-mode input[type="submit"]:not(.btn) {
+  color: var(--color-contrast-80);
+  background: var(--bg-dark-mode-aside);
+  border: var(--bg-dark-mode-aside);
+}
+
+.dark-mode input[type="button"]:not(.btn):hover,
+.dark-mode input[type="reset"]:not(.btn):hover,
+.dark-mode input[type="submit"]:not(.btn):hover {
+  background: var(--bg-dark-mode-aside);
+  border: var(--color-border);
+  opacity: 0.8;
+}
+
+.dark-mode input[type="checkbox"]:focus::before {
+  border-color: var(--color-contrast-100);
+  box-shadow: 0 0 4px var(--color-contrast-100);
+}
+
+.dark-mode ::placeholder {
+  /* Modern Browsers */
+  color: var(--color-contrast-40) !important;
+  opacity: 1;
+  /* Firefox */
+}
+
+.dark-mode ::-webkit-input-placeholder {
+  /* Chrome / Opera / Safari */
+  color: var(--color-contrast-40) !important;
+}
+
+.dark-mode ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--color-contrast-40) !important;
+}
+
+.dark-mode :-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--color-contrast-40) !important;
+}
+
+.dark-mode :-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--color-contrast-40) !important;
+}
+
+.dark-mode ::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.dark-mode input[list]::-webkit-calendar-picker-indicator {
+  filter: none;
+  color: #fff;
+}
+
+.dark-mode .btn,
+.dark-mode .btn:hover,
+.dark-mode .btn:focus,
+.dark-mode .btn:active,
+.dark-mode .btn:visited {
+  border-color: var(--color-border);
+}
+
+.dark-mode input[type="submit"]:not(.btn),
+.dark-mode input[type="submit"]:not(.btn):hover,
+.dark-mode input[type="submit"]:not(.btn):focus {
+  background-color: var(--bg-dark-mode-aside);
+}
