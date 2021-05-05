@@ -1,49 +1,45 @@
 import React, { UseState } from 'react';
-import PropTypes from 'prop-types';
 import Block_heading from './components/block-heading';
 import TodoList from './components/TodoList';
  
-module_1.propTypes = {
-    
-};
 
 function module_1(props) {
     const todoList = [
         {
             id: 1,
-            title: 'A 7-Day Southern California Road Trip Itinerary',
-            thumb: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            title: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+            thumb: require('../../image/img.jpg').default,
             status: 'new',
         },
         {
             id: 2,
-            title: 'The 18 Best Things to See and Do in Oslo',
-            thumb: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            title: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+            thumb: require('../../image/module1.1.jpg').default,
             status: 'new',
         },
         {
             id: 3,
-            title: 'California Road Trip: A 21-Day Suggested Itinerary',
-            thumb: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            title: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+            thumb: require('../../image/module1.2.jpg').default,
             status: 'new',
         },
         {
             id: 4,
-            title: 'The 18 Best Things to See and Do in Oslo',
-            thumb: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
-            status: 'new',
+            title: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+            thumb: require('../../image/img.jpg').default,
+            status: 'old',
         },
         {
             id: 5,
-            title: 'The 18 Best Things to See and Do in Oslo',
-            thumb: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
-            status: 'new',
+            title: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+            thumb: require('../../image/img.jpg').default,
+            status: 'old',
         },
         {
             id: 6,
-            title: 'California Road Trip: A 21-Day Suggested Itinerary',
-            thumb: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
-            status: 'new',
+            title: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+            thumb: require('../../image/img.jpg').default,
+            status: 'old',
         },
     ];
  

@@ -74,6 +74,7 @@ var mdvBlog = mdvBlog || {};
             mdvBlog.documentOnReady.carousel_auto_width_has_number();
             mdvBlog.documentOnReady.themeSwitch();
             mdvBlog.documentOnReady.loader();
+            mdvBlog.documentOnReady.activeTabs();
         },
         /* ============================================================================
          * Loader
@@ -125,6 +126,15 @@ var mdvBlog = mdvBlog || {};
                 });
             }
             init(); // initialize
+        },
+
+        activeTabs: function() {
+            var $active_tabs = $('#js-active-tabs .tab-links');
+        
+            $active_tabs.on('click', function () {
+                $('.tab-links.is-active').removeClass('is-active');
+                $(this).addClass('is-active');
+            });
         },
 
         fixed_menu: function () {
