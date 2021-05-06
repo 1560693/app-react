@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Block_heading from '../components/block-heading';
 import { Link } from 'react-router-dom';
+import postsApi from '../../../api/postsApi';
 
 function Module_3(props) {
 
@@ -11,20 +12,29 @@ function Module_3(props) {
         setVisible((addItems) => addItems + 3);
     }
 
-    useEffect(() => {
-        fetch('http://localhost:3000/posts')
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/posts')
         
-        .then((res) => res.json())
-        .then((data) => setItems(data))
-    }, []);
+    //     .then((res) => res.json())
+    //     .then((data) => setItems(data))
+    // }, []);
 
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const postsList = await postsApi.getAll()
+            .then((data) => setItems(data))
+        };
+
+        fetchPosts();
+    }, []);
+     
     return (
         <div className="mnmd-block mnmd-block--fullwidth featured-module-3">
             <div className="mnmd-block__inner">
                 <Block_heading />
                 <div className="posts-list flex-box flex-box-3i flex-space-30">
                     {items.slice(0, visible).map((item) => (
-                        <article className="post post--vertical">
+                        <article key={item.id} className="post post--vertical ">
                             <div className="post__thumb object-fit">
                                 <Link to="/">
                                     <img src={item.thumbUrl} alt={item.title}/>
