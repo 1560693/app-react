@@ -4,30 +4,28 @@ import { Link } from 'react-router-dom';
 import postsApi from '../../../api/postsApi';
 
 function Module_3(props) {
-
     const [items, setItems] = useState([]);
     const [visible, setVisible] = useState(6);
 
     const showLoadMore = () => {
         setVisible((addItems) => addItems + 3);
-    }
+    };
 
     // useEffect(() => {
     //     fetch('http://localhost:3000/posts')
-        
+
     //     .then((res) => res.json())
     //     .then((data) => setItems(data))
     // }, []);
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const postsList = await postsApi.getAll()
-            .then((data) => setItems(data))
+            const postsList = await postsApi.getAll().then((data) => setItems(data));
         };
 
         fetchPosts();
     }, []);
-     
+
     return (
         <div className="mnmd-block mnmd-block--fullwidth featured-module-3">
             <div className="mnmd-block__inner">
@@ -37,21 +35,21 @@ function Module_3(props) {
                         <article key={item.id} className="post post--vertical ">
                             <div className="post__thumb object-fit">
                                 <Link to="/">
-                                    <img src={item.thumbUrl} alt={item.title}/>
+                                    <img src={item.thumbUrl} alt={item.title} />
                                 </Link>
                             </div>
                             <div className="post__text">
                                 <h3 className="post__title f-24 f-w-700">
-                                    <Link>
-                                        {item.title}
-                                    </Link>
+                                    <Link>{item.title}</Link>
                                 </h3>
                             </div>
                         </article>
                     ))}
                 </div>
                 <nav className="pagination text-center">
-                    <button onClick={showLoadMore} className="btn-defaule btn-loadmore">Load More</button>
+                    <button onClick={showLoadMore} className="btn-defaule btn-loadmore">
+                        Load More
+                    </button>
                 </nav>
             </div>
         </div>

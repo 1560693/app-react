@@ -1,7 +1,6 @@
 import React, { UseState } from 'react';
 import Block_heading from './components/block-heading';
 import TodoList from './components/TodoList';
- 
 
 function module_1(props) {
     const todoList = [
@@ -42,13 +41,13 @@ function module_1(props) {
             status: 'old',
         },
     ];
- 
-    const renderTodoList = todoList.filter(todo => todo.status === 'new')
+
+    const renderTodoList = todoList.filter((todo) => todo.status === 'new');
     return (
         <div className="mnmd-block mnmd-block--fullwidth featured-module-1">
             <div className="mnmd-block__inner">
-                <Block_heading/>
-                <TodoList todoList={renderTodoList}  />
+                <Block_heading />
+                <TodoList todoList={renderTodoList} />
                 {/* <div className="load-more">
                     <button className="btn-default btn-loadmore">Load More</button>
                 </div> */}

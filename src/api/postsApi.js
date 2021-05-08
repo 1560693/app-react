@@ -1,14 +1,14 @@
-import axiosClient from "./axiosClient";
+import axiosClient from './axiosClient';
 
 const postsApi = {
     getAll(params) {
         const url = '/posts';
-        return axiosClient.get(url, {params: params})
+        return axiosClient.get(url, { params: params });
     },
 
     get(id) {
         const url = `/posts/${id}`;
-        return axiosClient.get(url)
+        return axiosClient.get(url);
     },
 
     add(data) {
@@ -18,13 +18,13 @@ const postsApi = {
 
     update(data) {
         const url = `/posts/${data.id}`;
-        return axiosClient.patch(url,data);
+        return axiosClient.patch(url, data);
     },
 
     remove(id) {
         const url = `/posts/${id}`;
         return axiosClient.delete(url);
-    }
+    },
 };
 
 export default postsApi;
