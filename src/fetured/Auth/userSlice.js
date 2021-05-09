@@ -1,13 +1,22 @@
-const { createSlice } = require('@reduxjs/toolkit');
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import userApi from '../../api/userApi';
 
-const userSlice = createSlice({
-    name: 'user',
-    initialState: {
-        current: {},
-        setting: {},
-    },
-    reducers: {},
+// const { createSlice } = require('@reduxjs/toolkit');
+
+// const userSlice = createSlice({
+//     name: 'user',
+//     initialState: {
+//         current: {},
+//         settings: {},
+//     },
+//     reducers: {},
+// });
+
+// const { reducer } = userSlice;
+// export default reducer;
+
+const register = createAsyncThunk('user/register', async (payload) => {
+    //call api register
+    //save data to local storage
+    return {};
 });
-
-const { reducer } = userSlice;
-export default reducer;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import { Link } from 'react-router-dom';
@@ -9,11 +9,21 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Register from '../../../../fetured/Auth/components/Register';
+import CloseIcon from '@material-ui/icons/Close';
+import { IconButton } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Login from '../../../../fetured/Auth/components/Login';
 
 Header_Desktop.propTypes = {};
 
+const MODE = {
+    LOGIN: 'login',
+    REGISTER: 'register',
+};
 function Header_Desktop(props) {
     const [open, setOpen] = React.useState(false);
+    const [mode, setMode] = useState(MODE.LOGIN);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -22,6 +32,7 @@ function Header_Desktop(props) {
     const handleClose = () => {
         setOpen(false);
     };
+
     return (
         <div className="container hidden-991">
             <div className="header-desktop flex-box">
@@ -222,19 +233,41 @@ function Header_Desktop(props) {
                 aria-labelledby="form-dialog-title"
                 disableBackdropClick
                 disableEscapeKeyDown
+                fullWidth
+                className="form__signUp"
             >
-                <DialogTitle id="form-dialog-title">Register</DialogTitle>
-
+                <Avatar className="form__avatar">
+                    <LockOutlinedIcon />
+                </Avatar>
+                <DialogTitle id="form-dialog-title" className="form__title">
+                    {mode === MODE.REGISTER && <>Sign Up</>}
+                    {mode === MODE.LOGIN && <>Sign In</>}
+                </DialogTitle>
+                <IconButton onClick={handleClose} className="btn-default btn-close-top-right">
+                    <CloseIcon />
+                </IconButton>
                 <DialogContent>
-                    <Register />
+                    {mode === MODE.REGISTER && (
+                        <>
+                            <Register />
+                            <DialogActions className="link__toggle-signin">
+                                <Button color="primary" onClick={() => setMode(MODE.LOGIN)}>
+                                    Already have an account. Register here
+                                </Button>
+                            </DialogActions>
+                        </>
+                    )}
+                    {mode === MODE.LOGIN && (
+                        <>
+                            <Login />
+                            <DialogActions className="link__toggle-signin">
+                                <Button color="primary" onClick={() => setMode(MODE.REGISTER)}>
+                                    Don't have an account. Login here
+                                </Button>
+                            </DialogActions>
+                        </>
+                    )}
                 </DialogContent>
-
-                <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Cancel
-                    </Button>
-                    <Button color="primary">Sign Up</Button>
-                </DialogActions>
             </Dialog>
         </div>
     );

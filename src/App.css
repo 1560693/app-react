@@ -118,7 +118,7 @@ default react css
     --bg-color-aside: var(--color-white);
     --bg-color-thumb: var(--color-contrast-10);
     --bg-offcanvas-submenu: var(--bg-color-main);
-    --bg-primary: rgb(255 56 124);
+    --bg-primary: #3f51b5;
 }
 
 /* =============================================================================
